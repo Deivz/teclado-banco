@@ -7,14 +7,14 @@ function Teclado(){
         teclasNumero[i] = <Botao valor = {i} />;
     }
     return(
-        <div>
+        <section>
             {teclasNumero}
             <Botao valor = "Limpar" />
             <Botao valor = "&#129040;" />
             <Botao valor = "Sacar" />
             <Botao valor = "Depositar" />
             <Botao valor = "Transferir" />
-        </div>
+        </section>
     )
 }
 
