@@ -1,13 +1,11 @@
 import React from "react";
 
-class Botao extends React.Component{
-    render(){
-        return(
-            <button>
-                Dale
-            </button>
-        )
-    }
+function Botao({valor}){
+    return(
+        <button>
+            {valor}
+        </button>
+    )
 }
 
 export default Botao;

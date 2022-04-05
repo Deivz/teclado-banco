@@ -1,8 +1,9 @@
 import React from "react";
+import Teclado from "../Teclado";
 
-class Formulario extends React.Component{
-    render(){
-        return(
+function Formulario(){
+    return(
+        <div>
             <form name="form" className="form" id="form">
                 <fieldset className="primeira-fieldset">
                     <legend>Informações bancárias</legend>
@@ -13,9 +14,12 @@ class Formulario extends React.Component{
                         <label forHtml="valor" className="form__itens valor">Valor</label>
                         <input type="text" name="cliente" id="valor" className="form__itens" required placeholder="Valor em R$" maxlength="10" readonly></input>
                 </fieldset>	
-			</form>
-        )
-    }
+            </form>
+            <section>
+                <Teclado />
+            </section>
+        </div>
+    )
 }
 
 export default Formulario;
