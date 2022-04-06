@@ -1,16 +1,10 @@
-import React from "react";
-import som from "../Botao/click.ogg";
+// import som from "../Botao/click.ogg";
 import styles from "./botao.module.css"
 
-function tocaSom(){
-    const audio = new Audio(som);
-    audio.play()
-}
-
-function Botao({valor}){
+function Botao({event, valor}){
     return(
         <>
-            <button onClick={tocaSom} className={styles.botao}>
+            <button onClick={event} className={styles.botao}>
                 {valor}
             </button>
         </>

@@ -1,6 +1,10 @@
 .tecladoContainer{
+    background-color: #f7f0e9;
+    border-radius: 15px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin: 1rem auto;
-    width: 230px;
+    padding: 1rem .5rem;
+    width: 250px;
 }
