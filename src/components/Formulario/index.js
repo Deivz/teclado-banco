@@ -1,10 +1,11 @@
 import React from "react";
 import Teclado from "../Teclado";
+import styles from "./formulario.module.css"
 
 function Formulario(){
     return(
         <div>
-            <form name="form" className="form" id="form">
+            <form name="form" className={styles.form} id="form">
                 <fieldset className="primeira-fieldset">
                     <legend>Informações bancárias</legend>
                         <label forHtml="conta_origem" className="form__itens">Conta origem</label>

@@ -1,0 +1,15 @@
+.botao{
+    background-color: white;
+    border-radius: 10px;
+    height: 70px;
+    margin: .2rem;
+    width: 70px;
+}
+
+.botao:nth-child(1){
+    order: 1;
+}
+
+.botao:nth-child(n+12):nth-child(n-15){
+    order: 2;
+}
