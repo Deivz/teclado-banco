@@ -8,3 +8,7 @@
     padding: 1rem .5rem;
     width: 250px;
 }
+
+.invisivel{
+    display: none;
+}

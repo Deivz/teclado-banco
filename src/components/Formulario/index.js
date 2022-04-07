@@ -3,6 +3,7 @@ import Teclado from "../Teclado";
 import styles from "./formulario.module.css"
 
 function Formulario(){
+
     return(
         <div className={styles.containerForm}>
             <form name="form" className={styles.form} id="form">
