@@ -1,14 +1,9 @@
-// import som from "../Botao/click.ogg";
 import styles from "./botao.module.css"
 
-function Botao({event, valor}){
+function Botao({event, tecla}){
     return(
-        <>
-            <button onClick={event} className={styles.botao}>
-                {valor}
-            </button>
-        </>
+        <button className = {styles.botao} onClick={event}>{tecla}</button>
     )
 }
 
-export default Botao;
+export default Botao

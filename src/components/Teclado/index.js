@@ -1,49 +1,50 @@
-import React, { useState } from "react";
-import Botao from "../Botao";
-import styles from "./teclado.module.css";
+import Botao from "../Botao"
 import som from "../Botao/click.ogg";
 
-function Teclado(){
+function Teclado({valor, setValor}){
     
     function tocarSom(){
         const audio = new Audio(som);
         audio.play()
     }
 
-    function preencherNumeros(){
-        let teclasNumero = [];
+    function criarTeclasNumeros(){
+        const teclasNumeros = []
+        let resultado = "";
         for (let i = 1; i <= 9; i++){
-            teclasNumero[i] = <Botao key={i} event={(e)=>{
+            teclasNumeros.push(<Botao key={i} tecla={i} event={(e)=>{
                 tocarSom();
-                setValor(valor + e.target.innerText);
-            }} valor = {i} />;
+                setValor(valor + e.target.innerHTML);
+            }} />)
         }
-        return teclasNumero
+        return teclasNumeros 
     }
 
-    const campoValor = document.querySelector("#valor");
-    const [valor, setValor] = useState("");
-       
     return(
-        <section className = {styles.tecladoContainer}>
-            {preencherNumeros()}
-            <Botao event={() => {
-                tocarSom();
-                setValor(valor.substring(0, valor.length - 1));            
-            }} valor = "&#129040;" />
-            <Botao event={(e) => {
-                tocarSom();
-                if (valor > 0){
-                    setValor(valor + e.target.innerText);
-                }
-            }} valor = {0} />
-            <Botao event={tocarSom} valor = "Limpar" />
-            <Botao event={tocarSom} valor = "Sacar" />
-            <Botao event={tocarSom} valor = "Depositar" />
-            <Botao event={tocarSom} valor = "Transferir" />
-            {valor && (<div className = {styles.invisivel}>{campoValor.value = valor}</div>)}
-        </section>
+        <div>
+            {criarTeclasNumeros()}
+            <Botao tecla="&#129040;" event={(e)=>{
+                if(valor > 0){
+                    tocarSom();
+                    setValor(valor.substring(0, valor.length - 1));
+                }else{
+                    setValor(valor = "")
+                } 
+            }} />
+            <Botao tecla={0} event={(e)=>{
+                if(valor > 0){
+                    tocarSom();
+                    setValor(valor + e.target.innerHTML);
+                }else{
+                    alert("Não pode haver 0 no início do valor")
+                }   
+            }} />
+            <Botao tecla="Limpar" event={tocarSom} />
+            <Botao tecla="Sacar" event={tocarSom} />
+            <Botao tecla="Dpositar" event={tocarSom} />
+            <Botao tecla="Transferir" event={tocarSom} />
+        </div>
     )
 }
 
-export default Teclado;
+export default Teclado
