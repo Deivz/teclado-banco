@@ -13,7 +13,7 @@ function Teclado(){
     function preencherNumeros(){
         let teclasNumero = [];
         for (let i = 1; i <= 9; i++){
-            teclasNumero[i] = <Botao event={(e)=>{
+            teclasNumero[i] = <Botao key={i} event={(e)=>{
                 tocarSom();
                 setValor(valor + e.target.innerText);
             }} valor = {i} />;

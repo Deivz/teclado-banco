@@ -10,16 +10,16 @@ function Formulario(){
                 <fieldset className={styles.fs}>
                     <legend>Informações bancárias</legend>
                         <div className={styles.separador}>
-                            <label forHtml="conta_origem" className="form__itens">Conta origem</label>
-                            <input type="text" name="cliente" id="conta_origem" className="form__itens" required placeholder="Conta origem" maxlength="10"></input>
+                            <label htmlFor="conta_origem" className="form__itens">Conta origem</label>
+                            <input type="text" name="cliente" id="conta_origem" className="form__itens" required placeholder="Conta origem" maxLength="10"></input>
                         </div>
                         <div className={styles.separador}>
-                            <label forHtml="conta_destino" className="form__itens">Conta destino</label>
-                            <input type="text" name="cliente" id="conta_destino" className="form__itens" required placeholder="Conta destino" maxlength="10"></input>
+                            <label htmlFor="conta_destino" className="form__itens">Conta destino</label>
+                            <input type="text" name="cliente" id="conta_destino" className="form__itens" required placeholder="Conta destino" maxLength="10"></input>
                         </div>
                         <div className={styles.separador}>
-                            <label forHtml="valor" className="form__itens valor">Valor</label>
-                            <input type="text" name="cliente" id="valor" className="form__itens" required placeholder="Valor em R$" maxlength="10" readonly></input>
+                            <label htmlFor="valor" className="form__itens valor">Valor</label>
+                            <input type="text" name="cliente" id="valor" className="form__itens" required placeholder="Valor em R$" maxLength="10" readOnly></input>
                         </div>   
                 </fieldset>	
             </form>
