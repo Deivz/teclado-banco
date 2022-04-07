@@ -1,5 +1,6 @@
 import Botao from "../Botao"
 import som from "../Botao/click.ogg";
+import styles from "./teclado.module.css"
 
 function Teclado({valor, setValor}){
     
@@ -21,7 +22,7 @@ function Teclado({valor, setValor}){
     }
 
     return(
-        <div>
+        <div className={styles.tecladoContainer}>
             {criarTeclasNumeros()}
             <Botao tecla="&#129040;" event={(e)=>{
                 if(valor > 0){
@@ -39,7 +40,10 @@ function Teclado({valor, setValor}){
                     alert("Não pode haver 0 no início do valor")
                 }   
             }} />
-            <Botao tecla="Limpar" event={tocarSom} />
+            <Botao tecla="Limpar" event={()=>{
+                tocarSom();
+                setValor(valor = "");
+            }} />
             <Botao tecla="Sacar" event={tocarSom} />
             <Botao tecla="Dpositar" event={tocarSom} />
             <Botao tecla="Transferir" event={tocarSom} />
