@@ -45,7 +45,7 @@ function Teclado({valor, setValor}){
                 setValor(valor = "");
             }} />
             <Botao tecla="Sacar" event={tocarSom} />
-            <Botao tecla="Dpositar" event={tocarSom} />
+            <Botao tecla="Depositar" event={tocarSom} />
             <Botao tecla="Transferir" event={tocarSom} />
         </div>
     )
